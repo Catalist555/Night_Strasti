@@ -13,10 +13,28 @@ class GameSprite(sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = player_x
         self.rect.y = player_y
- 
+
+
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
- 
+
+
+
+
+class Player(GameSprite):
+    def update(self):
+        keys_pressed = key.get_getpresset()
+
+        keys = key.get_pressed()
+        if keys [K_LEFT] and self.rect.x > 5:
+        self.rect.x -= self.speed
+        if keys [K_RIGHT] and self.rect.x < win width 80:
+        self.rect.x += self.speed
+        if keys [K_UP] and self.rect.y > 5:
+        self.rect.y -= self.speed
+        if keys [K_DOWN] and self.rect.y win_height - 80:
+        self.rect.y += self.speed
+
 #Ігрова сцена:
 win_width = 700
 win_height = 500
